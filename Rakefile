@@ -5,12 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "restful_json_rack"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Rails middleware to restful json interactions with your activerecord models }
+    gem.description = %Q{}
     gem.email = "me@christophernelsonconsulting.com"
     gem.homepage = "http://github.com/superchris/restful_json_rack"
     gem.authors = ["Chris Nelson"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "rack", ">= 1.0"
+    gem.add_development_dependency "activerecord"
+    gem.add_development_dependency "flexmock"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
