@@ -9,6 +9,7 @@ You're welcome.
 
 In environment.rb:
 
+==
 config.middleware.use RestfulJsonMiddleware
 ActiveRecord::Base.include_root_in_json = false
 
@@ -23,6 +24,7 @@ ActiveRecord::Base.include_root_in_json = false
 * Send me a pull request. Bonus points for topic branches.
 
 == Stuff we still need
+
  * For some browser requests it seems like relying on content/type isn't good enough.
  * A way to specify which models to expose would be good.
  * Some security would be super awesome.
