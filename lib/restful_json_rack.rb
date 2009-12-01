@@ -9,11 +9,11 @@ class RestfulJsonMiddleware
     request = Rack::Request.new(env)
     request.body.rewind
     body = request.body.read
-    path_args = request.path.split("/").reject(&:blank?)
-    if request.content_type =~ %r{application/json}
+    if request.path =~ %r{\.json$}
+      path_args = request.path.gsub(/\.json$/, "").split("/").reject(&:blank?)
       send(request.request_method.downcase, path_args, body.blank? ? {} : JSON.parse(body))
     else
-      @app.call
+      @app.call(env)
     end
   end
 
